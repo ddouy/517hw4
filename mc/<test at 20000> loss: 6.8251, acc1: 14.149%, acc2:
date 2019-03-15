@@ -1,0 +1,7 @@
+<test at 20000> loss: 6.8251, acc1: 14.149%, acc2: 18.546%, EM: 12.519%, F1: 22.643% for 0.5
+<test at 20000> loss: 6.7828, acc1: 15.649%, acc2: 18.727%, EM: 13.399%, F1: 24.166% for 0.7
+<test at 20000> loss: 6.5755, acc1: 16.374%, acc2: 19.710%, EM: 14.252%, F1: 24.958% for 0.9
+
+<test at 20000> loss: 6.5624, acc1: 18.391%, acc2: 20.435%, EM: 15.468%, F1: 27.016% for 0.9
+
+<test at 20000> loss: 7.0103, acc1: 14.899%, acc2: 16.943%, EM: 11.148%, F1: 22.448% for 0.9 state_output dropout rnn

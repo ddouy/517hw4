@@ -74,14 +74,14 @@ def rnn_forward(config, inputs, scope=None):
         p = config.keep_prob
 
         xx_fw_rnn_cell = GRUCell(num_units=d)
-        xx_fw_rnn_cell = DropoutWrapper(xx_fw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+        xx_fw_rnn_cell = DropoutWrapper(xx_fw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
         xx_bw_rnn_cell = GRUCell(num_units=d)
-        xx_bw_rnn_cell = DropoutWrapper(xx_bw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+        xx_bw_rnn_cell = DropoutWrapper(xx_bw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
 
         qq_fw_rnn_cell = GRUCell(num_units=d)
-        qq_fw_rnn_cell = DropoutWrapper(qq_fw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+        qq_fw_rnn_cell = DropoutWrapper(qq_fw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
         qq_bw_rnn_cell = GRUCell(num_units=d)
-        qq_bw_rnn_cell = DropoutWrapper(qq_bw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+        qq_bw_rnn_cell = DropoutWrapper(qq_bw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
         with tf.variable_scope("qqq"):
         	(qq_fw_out, qq_bw_out), _ = tf.nn.bidirectional_dynamic_rnn(qq_fw_rnn_cell, qq_bw_rnn_cell, qq, dtype=tf.float32)
         with tf.variable_scope("xxx"):
@@ -148,14 +148,14 @@ def attention_forward(config, inputs, scope=None):
 		p = config.keep_prob
 
 		xx_fw_rnn_cell = GRUCell(num_units=d)
-		xx_fw_rnn_cell = DropoutWrapper(xx_fw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+		xx_fw_rnn_cell = DropoutWrapper(xx_fw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
 		xx_bw_rnn_cell = GRUCell(num_units=d)
-		xx_bw_rnn_cell = DropoutWrapper(xx_bw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+		xx_bw_rnn_cell = DropoutWrapper(xx_bw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
 
 		qq_fw_rnn_cell = GRUCell(num_units=d)
-		qq_fw_rnn_cell = DropoutWrapper(qq_fw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+		qq_fw_rnn_cell = DropoutWrapper(qq_fw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
 		qq_bw_rnn_cell = GRUCell(num_units=d)
-		qq_bw_rnn_cell = DropoutWrapper(qq_bw_rnn_cell, output_keep_prob=p, state_keep_prob=p)
+		qq_bw_rnn_cell = DropoutWrapper(qq_bw_rnn_cell, input_keep_prob=p, output_keep_prob=p, state_keep_prob=p)
 		with tf.variable_scope("qqq"):
 			(qq_fw_out, qq_bw_out), _ = tf.nn.bidirectional_dynamic_rnn(qq_fw_rnn_cell, qq_bw_rnn_cell, qq, dtype=tf.float32)
 		with tf.variable_scope("xxx"):
