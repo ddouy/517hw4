@@ -188,11 +188,11 @@ def attention_forward(config, inputs, scope=None):
 		xq = tf.concat([xx_out_tiled, qq_out_tiled, xx_out_tiled * qq_out_tiled], axis=2)  # [N, JX, JQ, 6d]
 		xq_flat = tf.reshape(xq, [-1, 6*d])  # [N * JX, 6*d]
 
-		p_k = tf.layers.dense(inputs=xq_flat, units=1)
-		p_k = tf.squeeze(p_k)
-		p_k = tf.nn.softmax(p_k)
+		# p_k = tf.layers.dense(inputs=xq_flat, units=1)
+		# p_k = tf.squeeze(p_k)
+		# p_k = tf.nn.softmax(p_k)
 
-		# p_k = tf.layers.dense(inputs=xq_flat, units=1, activation=tf.nn.softmax)
+		p_k = tf.layers.dense(inputs=xq_flat, units=1, activation=tf.nn.softmax)
 
 		print("p_k")
 		print(tf.shape(p_k))
